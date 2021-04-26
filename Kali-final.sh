@@ -112,9 +112,9 @@ mkdir -p ~/.vim/pack/themes/start
 cd ~/.vim/pack/themes/start
 git clone -q https://github.com/dracula/vim.git dracula
 touch ~/.vimrc
-echo 'packadd! dracula' >> ~/.vimrc
-echo 'syntax enable' >> ~/.vimrc
-echo 'colorscheme dracula' >> ~/.vimrc
+echo -e 'packadd! dracula\n' >> ~/.vimrc
+echo -e 'syntax enable\n' >> ~/.vimrc
+echo -e 'colorscheme dracula' >> ~/.vimrc
 
 # Add some git settings
 # enable git cache
