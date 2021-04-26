@@ -18,6 +18,8 @@ YELLOW="\033[1;33m"
 GREEN="\033[1;32m"
 NOCOLOR="\033[0m"
 
+echo -e "${RED}Please Change username before running script${NOCOLOR}"
+sleep 5
 echo -e "${RED}This script should always run as root${NOCOLOR}"
 echo -e "
 ${RED} _ _                             
@@ -27,6 +29,18 @@ ${RED} _ _
 |_|\__|___/_| |_|\___/_/\_\_| |_|
 ${NOCOLOR}"
 
+# Check for the root
+if [[ "$USER" == "root" ]]; then
+    echo -n "${YELLOW}starting the script${NOCOLOR}"
+    sleep 0.3
+    echo -n "."
+    sleep 0.3
+    echo -n "."
+    sleep 0.3 
+    echo -e -n ". \n\n\n\n""
+else 
+  echo "${RED}You are not root${NOCOLOR}"
+fi
 # Edit sudoers
 echo -e "${GREEN}Configure sudoers...${NOCOLOR}"
 echo
@@ -43,15 +57,14 @@ echo -e "${GREEN}Installing kali-everything packages... ${NOCOLOR}"
 echo
 
 # Get and install all of the kali tools and update all tools
-apt-get install -qq -y kali-everything > /dev/null
+apt-get install -qq -y kali-linux-everything > /dev/null
  
 apt-get install -qq -y jq > /dev/null
 
 # Tool for steganography
 apt-get install -qq -y steghide > /dev/null
-apt-get install -qq -y stegseek > /dev/null
 apt-get install -qq -y stegcracker > /dev/null
-
+gem install zsteg > /dev/null
 # tool for check exif data from image
 apt-get install -qq -y exif > /dev/null
 apt-get install -qq -y exiftool > /dev/null
