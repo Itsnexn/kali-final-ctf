@@ -44,13 +44,12 @@ fi
 # Edit sudoers
 echo -e "${GREEN}Configure sudoers...${NOCOLOR}"
 echo
-echo "# Allow user use sudo without passwd" | sudo tee -a /etc/sudoers
 echo "${UNAME} ALL=(ALL) NOPASSWD:ALL" | tee -a /etc/sudoers
 
 # Update pakages
 echo -e "${GREEN}Updating package lists...${NOCOLOR}"
 echo
-apt-get update -qq > /dev/null
+apt-get update > /dev/null
 
 # Install kali-everything
 echo -e "${GREEN}Installing kali-everything packages... ${NOCOLOR}"
@@ -162,6 +161,11 @@ mv john johnTheRipper
 # a java steganography tool
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
 chmod +x stegsolve.jar
+
+# Pwncat shell staiblizer
+git clone https://github.com/calebstewart/pwncat.git
+cd pwncat
+python setup.py install
 
 # Add useful links to /opt
 echo -e "${GREEN}Add useful links to /opt/... ${NOCOLOR}"
