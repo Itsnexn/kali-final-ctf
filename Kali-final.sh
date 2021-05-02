@@ -134,10 +134,10 @@ echo -e "${GREEN}Grabbing useful scripts... ${NOCOLOR}"
 echo
 cd /opt/
 
-# git research tool
+# Git research tool
 git clone -q https://github.com/internetwache/GitTools.git 
 
-# unprivileged Linux process snooping
+# Unprivileged Linux process snooping
 git clone -q https://github.com/DominicBreuker/pspy.git
 
 # PentestMonkey PHP R3verse shell
@@ -146,9 +146,10 @@ git clone -q https://github.com/pentestmonkey/php-reverse-shell.git
 # OSINT tool on Instagram to collect, analyze, and run reconnaissance.
 git clone -q https://github.com/Datalux/Osintgram.git
 
+# Linux Enumeration & Privilege Escalation Checks
 git clone -q https://github.com/rebootuser/LinEnum.git
 
-# Linpeas sound familiar right???
+# PEAS sound familiar right???
 git clone -q https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite.git
 
 # Phishing tool
@@ -158,14 +159,14 @@ git clone -q https://github.com/carlospolop/privilege-escalation-awesome-scripts
 git clone -q https://github.com/openwall/john.git
 mv john johnTheRipper
 
-# a java steganography tool
+# A java steganography tool
 wget http://www.caesum.com/handbook/Stegsolve.jar -O stegsolve.jar
 chmod +x stegsolve.jar
 
 # Pwncat shell staiblizer
 git clone https://github.com/calebstewart/pwncat.git
 cd pwncat
-python setup.py install
+python3 setup.py install
 
 # Add useful links to /opt
 echo -e "${GREEN}Add useful links to /opt/... ${NOCOLOR}"
